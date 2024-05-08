@@ -1,3 +1,11 @@
+// Given parameters
+const velocity = 10000; // velocity (km/h)
+const acceleration = 3; // acceleration (m/s^2)
+const time = 3600; // seconds (1 hour)
+const initialDistance = 0; // distance (km)
+const initialFuel = 5000; // remaining fuel (kg)
+const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
+
 // Function to calculate new velocity based on acceleration
 function calcNewVel(vel, acc, time) {
   // Validate inputs
@@ -28,10 +36,8 @@ function calcNewDistance(vel, time) {
   }
 
   // Convert velocity from km/h to m/s for calculation
-  const velocityInMs = vel * (1000 / 3600);
-  const newDistance = velocityInMs * time / 3600; // Convert back to km
+  return initialDistance+(velocity * (time / time)); // d + (vel * (time / time))
 
-  return newDistance;
 }
 
 // Calculate remaining fuel
@@ -59,14 +65,6 @@ function calcRemainingFuel(fuel, fbr, time) {
 
   return remainingFuel;
 }
-
-// Given parameters
-const velocity = 10000; // velocity (km/h)
-const acceleration = 3; // acceleration (m/s^2)
-const time = 3600; // seconds (1 hour)
-const initialDistance = 0; // distance (km)
-const initialFuel = 5000; // remaining fuel (kg)
-const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
 
 // Calculate new velocity
 const newVelocity = calcNewVel(velocity, acceleration, time);
