@@ -8,39 +8,32 @@ This challenge invites students to debug, refactor, and enhance JavaScript funct
 
 ![alt text](mars.gif)
 
-##### Problem Areas to Address
+Velocity, Distance, and Fuel Calculation
+This JavaScript code calculates new velocity, distance, and remaining fuel based on given parameters.
 
-1. **Unit Mismatch**: The provided functions fail to convert units correctly, leading to calculation inaccuracies.
-2. **Parameter Misalignment**: Parameters are not handled in a way that prevents or highlights the potential for unit mismatch errors, leading to possible confusion.
+Functions
+calcNewVel(vel, acc, time)
+Calculates the new velocity based on the initial velocity, acceleration, and time.
 
-##### Initial Parameters
+vel (number): Initial velocity in km/h.
+acc (number): Acceleration in m/s².
+time (number): Time in seconds.
+Returns the new velocity in km/h.
 
-- **Initial Velocity (`vel`)**: The starting speed of the spacecraft, 10,000 km/h.
-- **Acceleration (`acc`)**: The spacecraft's acceleration, 3 m/s².
-- **Time (`time`)**: The duration of the calculation, 3,600 seconds (equivalent to 1 hour).
-- **Initial Distance (`d`)**: The starting distance from the reference point, 0 km.
-- **Initial Fuel (`fuel`)**: The starting amount of fuel, 5,000 kg.
-- **Fuel Burn Rate (`fbr`)**: The rate at which fuel is consumed, 0.5 kg/s.
+calcNewDistance(vel, time)
+Calculates the new distance based on the new velocity and time.
 
-##### Expected Corrected Results
+vel (number): New velocity in km/h.
+time (number): Time in seconds.
+Returns the new distance in km.
 
-- **New Velocity**: Approximately 48880 km/h after correction.
-- **New Distance**: Approximately 10000 km after correction.
-- **Remaining Fuel**: Approximately 3,200 kg after correction.
+calcRemainingFuel(fuel, fbr, time)
+Calculates the remaining fuel based on the initial fuel, fuel burn rate, and time.
 
-#### Your Task
+fuel (number): Initial fuel in kg.
+fbr (number): Fuel burn rate in kg/s.
+time (number): Time in seconds.
+Returns the remaining fuel in kg.
 
-1. **Identify and Understand Errors**: Analyse the provided functions to determine how unit mismatches and parameter misalignments cause incorrect results.
-2. **Refactor and Correct**: Modify the functions to handle parameters more effectively, incorporating object destructuring for clarity and implementing necessary unit conversions.
-
-#### Solution Approach
-
-- Use object destructuring in function parameters for better clarity.
-- Implement accurate unit conversions within the functions.
-- Ensure the corrected functions address the issues of unit mismatches and parameter clarity.
-
-#### Debugging Guide
-
-1. Enhance code readability for easier debugging.
-2. Identify and correct calculation errors.
-3. Improve the robustness of calculations. If incorrect units are used or other errors are detected, the code should notify the user instead of producing an incorrect result.
+Usage
+To use these functions, simply call them with the required parameters. The functions will return the calculated values, which can then be used for further processing or logging.
