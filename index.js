@@ -37,7 +37,6 @@ function calcNewDistance(vel, time) {
 
   // Convert velocity from km/h to m/s for calculation
   return initialDistance+(velocity * (time / time)); // d + (vel * (time / time))
-
 }
 
 // Calculate remaining fuel
